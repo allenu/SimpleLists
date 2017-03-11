@@ -1,7 +1,7 @@
 
 # SimpleLists
 
-This is a simple app that lets you create a list of strings.
+This is a simple macOS app that lets you create a list of items. You can select an item from the list and hit delete to remove it.
 
 ![screenshot](https://github.com/allenu/SimpleLists/raw/master/images/screenshot.png)
 
