@@ -681,7 +681,7 @@
         <!--View Controller-->
         <scene sceneID="mtO-1j-cUd">
             <objects>
-                <viewController id="Nq5-1X-Ffc" customClass="ViewController" customModule="UndoManagerExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nq5-1X-Ffc" customClass="ViewController" customModule="Simple_Lists" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="70u-x9-KXc">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -736,7 +736,7 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="9Ia-RD-yew">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.050000000000000003" horizontal="YES" id="9Ia-RD-yew">
                                     <rect key="frame" x="1" y="197" width="478" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -747,7 +747,7 @@
                             </scrollView>
                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-hw-j8V">
                                 <rect key="frame" x="20" y="228" width="440" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Enter a name and hit Return" drawsBackground="YES" id="UIS-t6-drO">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Enter an item and hit Return" drawsBackground="YES" id="UIS-t6-drO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

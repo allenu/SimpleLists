@@ -8,6 +8,7 @@ This is a simple macOS app that lets you create a list of items. You can select 
 This project illustrates a few basic macOS concepts.
 
 - Document-based app
+- Marking a document as "dirty" using updateChangeCount()
 - Loading and saving to a simple JSON file using JSONSerialization
 - Setting up simple view-based NSTableView
 - Handling delete key to remove selected item in a table view
