@@ -37,10 +37,13 @@ class ViewController: NSViewController {
     }
     
     @IBAction func didEnterName(sender: NSTextField) {
+        guard let document = document else { return }
+
         let name = sender.stringValue
         if name.lengthOfBytes(using: .utf8) > 0 {
-            document?.add(name: name)
-            reloadData()
+            let index = document.numNames
+            self.add(name: name, at: index)
+            undoManager?.setActionName("Add \"\(name)\"")
             sender.stringValue = ""
         }
     }
@@ -54,8 +57,38 @@ class ViewController: NSViewController {
     }
     
     override func deleteBackward(_ sender: Any?) {
-        if oldSelectedRow != -1 {
-            document?.remove(atIndex: oldSelectedRow)
+        guard let document = document else { return }
+
+        let index = oldSelectedRow
+        if index != -1, let name = document.name(atIndex: index) {
+            remove(at: index)
+            undoManager?.setActionName("Remove \"\(name)\"")
+        }
+    }
+    
+    
+    func add(name: String, at index: Int) {
+        guard let document = document else { return }
+        
+        document.add(name: name, at: index)
+        
+        undoManager?.registerUndo(withTarget: self, handler: { targetSelf in
+            targetSelf.remove(at: index)
+            self.reloadData()
+        })
+        reloadData()
+    }
+    
+    func remove(at index: Int) {
+        guard let document = document else { return }
+
+        if let name = document.name(atIndex: index) {
+            document.remove(at: index)
+            
+            undoManager?.registerUndo(withTarget: self, handler: { targetSelf in
+                targetSelf.add(name: name, at: index)
+            })
+            
             reloadData()
         }
     }

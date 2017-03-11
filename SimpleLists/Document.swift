@@ -66,8 +66,12 @@ extension Document {
         names.append(name)
         touch()
     }
+    func add(name: String, at index: Int) {
+        names.insert(name, at: index)
+        touch()
+    }
     
-    func remove(atIndex index: Int) {
+    func remove(at index: Int) {
         if index >= 0 && index < names.count {
             names.remove(at: index)
             touch()
