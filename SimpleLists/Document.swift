@@ -9,36 +9,68 @@
 import Cocoa
 
 class Document: NSDocument {
-
+    
+    fileprivate var names: [String] = []
+    
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
     }
-
+    
     override class func autosavesInPlace() -> Bool {
         return true
     }
-
+    
     override func makeWindowControllers() {
         // Returns the Storyboard that contains your Document window.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
         self.addWindowController(windowController)
     }
-
+    
     override func data(ofType typeName: String) throws -> Data {
-        // Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
-        // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        let data = try JSONSerialization.data(withJSONObject: names, options: .prettyPrinted)
+        return data
     }
-
+    
     override func read(from data: Data, ofType typeName: String) throws {
-        // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
-        // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
-        // If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.
-        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        if let names = try JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0)) as? [String] {
+            self.names = names
+        } else {
+            throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        }
     }
-
-
+    
+    func touch() {
+        self.updateChangeCount(.changeDone)
+    }
 }
 
+//
+// Public API
+//
+
+extension Document {
+    var numNames: Int {
+        return names.count
+    }
+    
+    func name(atIndex index: Int) -> String? {
+        if index >= 0 && index < names.count {
+            return names[index]
+        } else {
+            return nil
+        }
+    }
+    func add(name: String) {
+        names.append(name)
+        touch()
+    }
+    
+    func remove(atIndex index: Int) {
+        if index >= 0 && index < names.count {
+            names.remove(at: index)
+            touch()
+        }
+    }
+}

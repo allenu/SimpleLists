@@ -12,16 +12,20 @@
 		B7D8C0BB1E74B12000B7EA4D /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C0BA1E74B12000B7EA4D /* Document.swift */; };
 		B7D8C0BD1E74B12000B7EA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C0BC1E74B12000B7EA4D /* Assets.xcassets */; };
 		B7D8C0C01E74B12000B7EA4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C0BE1E74B12000B7EA4D /* Main.storyboard */; };
+		B7D8C0C81E74B16900B7EA4D /* TableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C0C71E74B16900B7EA4D /* TableCellView.xib */; };
+		B7D8C0CA1E74B17D00B7EA4D /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C0C91E74B17D00B7EA4D /* TableCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B7D8C0B31E74B12000B7EA4D /* SimpleLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D8C0B31E74B12000B7EA4D /* Simple Lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Lists.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D8C0B61E74B12000B7EA4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D8C0B81E74B12000B7EA4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B7D8C0BA1E74B12000B7EA4D /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		B7D8C0BC1E74B12000B7EA4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7D8C0BF1E74B12000B7EA4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7D8C0C11E74B12000B7EA4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7D8C0C71E74B16900B7EA4D /* TableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCellView.xib; sourceTree = "<group>"; };
+		B7D8C0C91E74B17D00B7EA4D /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +50,7 @@
 		B7D8C0B41E74B12000B7EA4D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B7D8C0B31E74B12000B7EA4D /* SimpleLists.app */,
+				B7D8C0B31E74B12000B7EA4D /* Simple Lists.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +64,8 @@
 				B7D8C0BC1E74B12000B7EA4D /* Assets.xcassets */,
 				B7D8C0BE1E74B12000B7EA4D /* Main.storyboard */,
 				B7D8C0C11E74B12000B7EA4D /* Info.plist */,
+				B7D8C0C71E74B16900B7EA4D /* TableCellView.xib */,
+				B7D8C0C91E74B17D00B7EA4D /* TableCellView.swift */,
 			);
 			path = SimpleLists;
 			sourceTree = "<group>";
@@ -67,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B7D8C0B21E74B12000B7EA4D /* SimpleLists */ = {
+		B7D8C0B21E74B12000B7EA4D /* Simple Lists */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B7D8C0C41E74B12000B7EA4D /* Build configuration list for PBXNativeTarget "SimpleLists" */;
+			buildConfigurationList = B7D8C0C41E74B12000B7EA4D /* Build configuration list for PBXNativeTarget "Simple Lists" */;
 			buildPhases = (
 				B7D8C0AF1E74B12000B7EA4D /* Sources */,
 				B7D8C0B01E74B12000B7EA4D /* Frameworks */,
@@ -79,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleLists;
+			name = "Simple Lists";
 			productName = SimpleLists;
-			productReference = B7D8C0B31E74B12000B7EA4D /* SimpleLists.app */;
+			productReference = B7D8C0B31E74B12000B7EA4D /* Simple Lists.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B7D8C0B21E74B12000B7EA4D /* SimpleLists */,
+				B7D8C0B21E74B12000B7EA4D /* Simple Lists */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +131,7 @@
 			files = (
 				B7D8C0BD1E74B12000B7EA4D /* Assets.xcassets in Resources */,
 				B7D8C0C01E74B12000B7EA4D /* Main.storyboard in Resources */,
+				B7D8C0C81E74B16900B7EA4D /* TableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D8C0B91E74B12000B7EA4D /* ViewController.swift in Sources */,
+				B7D8C0CA1E74B17D00B7EA4D /* TableCellView.swift in Sources */,
 				B7D8C0B71E74B12000B7EA4D /* AppDelegate.swift in Sources */,
 				B7D8C0BB1E74B12000B7EA4D /* Document.swift in Sources */,
 			);
@@ -283,7 +291,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B7D8C0C41E74B12000B7EA4D /* Build configuration list for PBXNativeTarget "SimpleLists" */ = {
+		B7D8C0C41E74B12000B7EA4D /* Build configuration list for PBXNativeTarget "Simple Lists" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B7D8C0C51E74B12000B7EA4D /* Debug */,
